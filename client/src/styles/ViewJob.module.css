@@ -1,0 +1,71 @@
+
+
+
+/************
+/*
+.Container h2 {
+  padding: 20px;
+ 
+  display: flex;
+  margin-right: 6%;
+  align-items: center;
+  justify-content: center;
+}
+
+*/
+/* ViewJob.module.css */
+.tryBtn{
+  margin-left:500px;
+}
+.main_div{
+  background-color: blue;
+}
+.Job_div {
+    background-color: #cdc5c5;
+  display: flex;
+  justify-content: space-between;
+}
+
+.jobs_div {
+    background-color: olive;
+  padding: 30px;
+  width: 450px; /* Adjust the width as needed */
+  margin-top: 50px;
+}
+
+.Grid_div {
+    margin-left: 0;
+    height: 120px;
+  border-radius: none;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 5px 5px 5px #cdc5c5;
+  width: 100%; /* Adjust the width to fit the container */
+  background-color: #ffff;
+  font-weight: bold;
+  margin-bottom: 10px; /* Add margin to separate each item */
+}
+
+.jobsDeatil_div{
+  width: 600px;
+  background-color: aqua;
+   margin-top: 50px;
+
+
+}
+
+/*.InfoBtn {
+  background-color: #193c62;
+  margin-left:35%;
+  color: #ffff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.InfoBtn:hover {
+  background-color: #182d57;
+}
+*/
