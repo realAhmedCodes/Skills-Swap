@@ -140,7 +140,7 @@ export const Register = () => {
 
   const nextPage = (e) => {
     e.preventDefault();
-    setNextComp1(false);
+    setNextComp1(!nextComp1);
   }
 
   const nextBtn = (e) => {
@@ -196,9 +196,15 @@ export const Register = () => {
       <div class="mt-14 mb-0 ">
         <img class="mx-auto h-16 w-auto" src={icon2} alt="Your Company" />
 
-        <h2 class="mt-4 text-center text-2xl font-bold  tracking-tight text-gray-900">Sign up to get started</h2>
+        <h2 class="mt-4 text-center text-2xl font-bold  tracking-tight text-gray-900">
+          Sign up to get started
+        </h2>
       </div>
-      <p ref={errRef} className={errMsg ? styles.errmsg : styles.offscreen} aria-live="assertive">
+      <p
+        ref={errRef}
+        className={errMsg ? styles.errmsg : styles.offscreen}
+        aria-live="assertive"
+      >
         {errMsg}
       </p>
       {nextComp1 === true ? (
@@ -207,13 +213,19 @@ export const Register = () => {
             <form class="space-y-6">
               <div>
                 <div>
-                  <label className="block text-sm p-0 mb-[-18px] font-medium text-gray-900" htmlFor="role">Select Role</label> <br />
+                  <label
+                    className="block text-sm p-0 mb-[-18px] font-medium text-gray-900"
+                    htmlFor="role"
+                  >
+                    Select Role
+                  </label>{" "}
+                  <br />
                   <div className="grid grid-cols-12 gap-2 mb-4">
                     <label className="rounded col-span-6 bg-blue-500 px-4 py-1 text-white focus-within:bg-blue-500">
                       <input
                         type="radio"
                         value="user"
-                        checked={role === 'user'}
+                        checked={role === "user"}
                         onChange={handleRoleChange}
                       />
                       &nbsp; User
@@ -222,7 +234,7 @@ export const Register = () => {
                       <input
                         type="radio"
                         value="employer"
-                        checked={role === 'employer'}
+                        checked={role === "employer"}
                         onChange={handleRoleChange}
                       />
                       &nbsp; Employer
@@ -230,9 +242,15 @@ export const Register = () => {
                   </div>
                 </div>
                 <div>
-                  <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Username</label>
+                  <label
+                    for="email"
+                    class="block text-sm font-medium leading-6 text-gray-900"
+                  >
+                    Username
+                  </label>
                   <div class="mt-2">
-                    <input type="text"
+                    <input
+                      type="text"
                       id="username"
                       placeholder="Username"
                       ref={userRef}
@@ -244,10 +262,11 @@ export const Register = () => {
                       aria-describedby="uidnote"
                       onFocus={() => setUserFocus(true)}
                       onBlur={() => setUserFocus(false)}
-                      autocomplete="email" class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                      autocomplete="email"
+                      class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
                   </div>
                 </div>
-
 
                 <p
                   id="uidnote"
@@ -267,20 +286,34 @@ export const Register = () => {
               </div>
 
               <div>
-                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+                <label
+                  for="email"
+                  class="block text-sm font-medium leading-6 text-gray-900"
+                >
+                  Email address
+                </label>
                 <div class="mt-2">
-                  <input type="email"
+                  <input
+                    type="email"
                     placeholder="Email"
                     name="email"
                     id="email"
                     onChange={(e) => setEmail(e.target.value)}
-                    autocomplete="email" required class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                    autocomplete="email"
+                    required
+                    class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  />
                 </div>
               </div>
 
               <div>
                 <div class="flex items-center justify-between">
-                  <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                  <label
+                    for="password"
+                    class="block text-sm font-medium leading-6 text-gray-900"
+                  >
+                    Password
+                  </label>
                   <FontAwesomeIcon
                     icon={faCheck}
                     className={validPwd ? styles.valid : styles.hide}
@@ -291,7 +324,8 @@ export const Register = () => {
                   />
                 </div>
                 <div class="mt-2">
-                  <input type="password"
+                  <input
+                    type="password"
                     id="password"
                     onChange={(e) => setPwd(e.target.value)}
                     value={pwd}
@@ -301,7 +335,9 @@ export const Register = () => {
                     onFocus={() => setPwdFocus(true)}
                     placeholder="Password"
                     onBlur={() => setPwdFocus(false)}
-                    autocomplete="current-password" class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                    autocomplete="current-password"
+                    class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  />
 
                   <p
                     id="pwdnote"
@@ -327,10 +363,15 @@ export const Register = () => {
                 </div>
               </div>
 
-
               <div>
                 <div class="flex items-center justify-between">
-                  <label for="password" class="block text-sm font-medium leading-6 text-gray-900"> Confirm Password</label>
+                  <label
+                    for="password"
+                    class="block text-sm font-medium leading-6 text-gray-900"
+                  >
+                    {" "}
+                    Confirm Password
+                  </label>
                   <FontAwesomeIcon
                     icon={faCheck}
                     className={
@@ -345,7 +386,8 @@ export const Register = () => {
                   />
                 </div>
                 <div class="mt-2">
-                  <input type="password"
+                  <input
+                    type="password"
                     id="confirm_pwd"
                     onChange={(e) => setMatchPwd(e.target.value)}
                     value={matchPwd}
@@ -355,7 +397,9 @@ export const Register = () => {
                     aria-describedby="confirmnote"
                     onFocus={() => setMatchFocus(true)}
                     onBlur={() => setMatchFocus(false)}
-                    autocomplete="current-password" class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                    autocomplete="current-password"
+                    class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  />
                   <p
                     id="confirmnote"
                     className={
@@ -371,17 +415,24 @@ export const Register = () => {
               </div>
 
               <div>
-                <button onClick={nextPage} class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Next</button>
+                <button
+                  onClick={nextPage}
+                  class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Next
+                </button>
               </div>
-
 
               <p class="mt-10 text-center text-sm text-gray-500">
                 Already have an account?
-                <a href="/Login" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Log In</a>
+                <a
+                  href="/Login"
+                  class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+                >
+                  Log In
+                </a>
               </p>
-
             </form>
-
           </div>
         </>
       ) : (
@@ -399,7 +450,10 @@ export const Register = () => {
                   placeholder="Enter skill..."
                   className="border border-gray-300 px-3 py-2 rounded-md w-64 focus:outline-none focus:border-blue-500"
                 />
-                <button onClick={handleAddSkill} className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                <button
+                  onClick={handleAddSkill}
+                  className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+                >
                   Add Skill
                 </button>
               </div>
@@ -412,7 +466,11 @@ export const Register = () => {
                   />
                 ))}
               </div>
-              <button onClick={submitBtn} className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+              <button onClick={nextPage}>Back</button>
+              <button
+                onClick={submitBtn}
+                className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+              >
                 Submit
               </button>
             </div>
