@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Job_Desc } from "../component/Job_Desc";
 import { useDispatch, useSelector } from "react-redux";
 import { addJobInfo } from "../slices/Job_Info";
+import { Navbar } from "../component/Navbar";
 
 export const Job_Info = () => {
   const [company_name, setCompany_Name] = useState("");
@@ -44,7 +45,8 @@ console.log("ROle", userRole);
    //console.log(industry,type, subType);
   return (
     <div className="main_div">
-      <form action="">
+      <Navbar></Navbar>
+      <form className="max-w-lg mx-auto mt-8 p-8 bg-white shadow-md rounded">
         <input
           type="text"
           id="company_name"
@@ -53,6 +55,7 @@ console.log("ROle", userRole);
           onChange={(e) => {
             setCompany_Name(e.target.value);
           }}
+          className="mb-4 p-2 border border-gray-300 rounded w-full"
         />
         <input
           type="text"
@@ -62,6 +65,7 @@ console.log("ROle", userRole);
           onChange={(e) => {
             setEmployeer_Name(e.target.value);
           }}
+          className="mb-4 p-2 border border-gray-300 rounded w-full"
         />
         <input
           type="email"
@@ -71,6 +75,7 @@ console.log("ROle", userRole);
           onChange={(e) => {
             setEmployeer_email(e.target.value);
           }}
+          className="mb-4 p-2 border border-gray-300 rounded w-full"
         />
         <input
           type="text"
@@ -80,6 +85,7 @@ console.log("ROle", userRole);
           onChange={(e) => {
             setEmployeer_Phone_no(e.target.value);
           }}
+          className="mb-4 p-2 border border-gray-300 rounded w-full"
         />
         <input
           type="text"
@@ -89,6 +95,7 @@ console.log("ROle", userRole);
           onChange={(e) => {
             setTitle(e.target.value);
           }}
+          className="mb-4 p-2 border border-gray-300 rounded w-full"
         />
         <input
           type="text"
@@ -98,6 +105,7 @@ console.log("ROle", userRole);
           onChange={(e) => {
             setLocation(e.target.value);
           }}
+          className="mb-4 p-2 border border-gray-300 rounded w-full"
         />
         <input
           type="text"
@@ -107,11 +115,13 @@ console.log("ROle", userRole);
           onChange={(e) => {
             setNo_of_employees(e.target.value);
           }}
+          className="mb-4 p-2 border border-gray-300 rounded w-full"
         />
         <select
           onChange={(e) => {
             setIndustry(e.target.value);
           }}
+          className="mb-4 p-2 border border-gray-300 rounded w-full"
         >
           <option value="">Select Industry</option>
           <option value="it"> Information Technology (IT)</option>
@@ -131,6 +141,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job Type</option>
               <option value="Software Engineering">Software Engineering</option>
@@ -149,6 +160,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setSubType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job</option>
               <option value="Application Development">
@@ -171,6 +183,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setSubType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job</option>
               <option value="Network Administrator">
@@ -190,6 +203,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setSubType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job</option>
               <option value="Information Security Analyst">
@@ -211,6 +225,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setSubType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job</option>
               <option value="Database Administrator ">
@@ -233,6 +248,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job Type</option>
               <option value="Mechanical Engineering">
@@ -255,6 +271,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setSubType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job</option>
               <option value="Automotive Engineer">Automotive Engineer</option>
@@ -274,6 +291,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setSubType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job</option>
               <option value="Structural Engineer">Structural Engineer</option>
@@ -295,6 +313,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setSubType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job</option>
               <option value="Power Systems Engineer">
@@ -319,6 +338,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setSubType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job</option>
               <option value="Clinical Engineer">Clinical Engineer</option>
@@ -340,6 +360,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job Type</option>
               <option value="Medicine">Medicine</option>
@@ -359,6 +380,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setSubType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job</option>
               <option value="Physician">Physician</option>
@@ -376,6 +398,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setSubType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job</option>
               <option value="Physical Therapist">Physical Therapist</option>
@@ -397,6 +420,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setSubType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job</option>
               <option value="Hospital Administrator">
@@ -417,6 +441,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job Type</option>
               <option value="Banking">Banking</option>
@@ -434,6 +459,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setSubType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job</option>
               <option value="Bank Teller">Bank Teller</option>
@@ -451,6 +477,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setSubType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job</option>
               <option value="Accountant">Accountant</option>
@@ -468,6 +495,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setSubType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job</option>
               <option value="Financial Software Developer">
@@ -490,6 +518,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job Type</option>
               <option value="Film and Television">Film and Television</option>
@@ -507,6 +536,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setSubType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job</option>
               <option value="Director">Director</option>
@@ -523,6 +553,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setSubType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job</option>
               <option value="Journalist">Journalist</option>
@@ -539,6 +570,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job Type</option>
               <option value="Sales">Sales</option>
@@ -555,6 +587,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setSubType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job</option>
               <option value="Retail Sales Associate">
@@ -576,6 +609,7 @@ console.log("ROle", userRole);
               onChange={(e) => {
                 setSubType(e.target.value);
               }}
+              className="mb-4 p-2 border border-gray-300 rounded w-full"
             >
               <option value="">Select Job</option>
               <option value="Inventory Manager">Inventory Manager</option>
@@ -586,7 +620,12 @@ console.log("ROle", userRole);
         ) : (
           ""
         )}
-        <button onClick={navPage}>Next</button>
+        <button
+          className="bg-green-500 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline-green mx-auto"
+          onClick={navPage}
+        >
+          Next
+        </button>
       </form>
     </div>
   );
