@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/ViewJob.module.css";
+import { Navbar } from "../component/Navbar";
 import { useCookies } from "react-cookie";
 import { useSelector } from "react-redux";
 import { jwtDecode, InvalidTokenError } from "jwt-decode";
@@ -69,6 +70,7 @@ console.log(savedJobs)
 
   return (
     <div>
+      <Navbar></Navbar>
       <div className={styles.jobs_div}>
         {savedJobs.map((savedJob) => (
           <div className={styles.Grid_div} key={savedJob.job_id}>
