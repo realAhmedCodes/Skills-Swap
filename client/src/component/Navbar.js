@@ -46,7 +46,7 @@ export const Navbar = () => {
     setShow(!show);
   };
   const listFunc = () => {
-    nav("/SavedList");
+    nav("/profile");
   };
   const adminPageNav = () => {
     nav("/db_manage");
