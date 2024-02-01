@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useCookies } from "react-cookie";
 import { addJobDocs } from "../slices/Job_Docs";
-
+import { Navbar } from "../component/Navbar";
 export const Job_docs = () => {
   const [deadlineValue, setDeadlineValue] = useState("");
   const [deadline, setDeadline] = useState("");
@@ -12,22 +12,16 @@ export const Job_docs = () => {
   //const [doc, setDoc] = useState(null);
   const [error, setError] = useState(null);
 
+  const dateFunc = (e) => {
+    const selectedDate = e.target.value; // The value from the date input
 
-
-
- 
-
-const dateFunc = (e) => {
-  const selectedDate = e.target.value; // The value from the date input
-
-  if (selectedDate) {
-    setDeadline(selectedDate); // Set the deadline directly as the selected date value
-  }
-};
+    if (selectedDate) {
+      setDeadline(selectedDate); // Set the deadline directly as the selected date value
+    }
+  };
 
   /*const date= new Date(deadline)
   const formattedDate = date.toLocaleDateString();*/
-
 
   const dispatch = useDispatch();
   /* const handleFileChange = (event) => {
@@ -54,7 +48,7 @@ const dateFunc = (e) => {
     no_of_employees,
     industry,
     type,
-    sub_type
+    sub_type,
   } = useSelector((state) => state.jobInfos);
   const { description, job_type, work_Nature, web_link } = useSelector(
     (state) => state.jobDesc
@@ -108,12 +102,12 @@ const dateFunc = (e) => {
       console.log(err);
     }
   };
-  const navPageBackword = (e) => {
+  const navPageBackward = (e) => {
     e.preventDefault();
     nav("/Job_Pay");
   };
 
-  console.log(
+ /* console.log(
     company_name,
     no_of_employees,
     employeer_name,
@@ -134,88 +128,109 @@ const dateFunc = (e) => {
     type,
     sub_type,
     web_link
-  );
+  );*/
   return (
-    <div className="main_div">
-      <form action="">
-        <input
-          type="email"
-          name="company_email"
-          placeholder="Company Email"
-          id="company_email"
-          onChange={(event) => setCompany_Email(event.target.value)}
-        />
-        <label>Is There An Application Deadline?</label>
-        <label htmlFor="deadlineValue">
-          Yes
+    <div className="main">
+      <Navbar></Navbar>
+      <div className="max-w-md mx-auto mt-8 p-6 bg-white shadow-md rounded-lg">
+        <form>
           <input
-            type="radio"
-            name="deadlineValue"
-            id="deadlineValue"
-            value="yes"
-            placeholder=""
-            onChange={(event) => setDeadlineValue(event.target.value)}
+            type="email"
+            name="company_email"
+            placeholder="Company Email"
+            id="company_email"
+            className="w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:shadow-outline-blue"
+            onChange={(event) => setCompany_Email(event.target.value)}
           />
-        </label>
-        <label htmlFor="deadlineValue">
-          No
-          <input
-            type="radio"
-            name="deadlineValue"
-            id="deadlineValue"
-            placeholder=""
-            value="no"
-            onChange={(event) => setDeadlineValue(event.target.value)}
-          />
-        </label>
-        {deadlineValue === "yes" ? (
-          <>
-            <label htmlFor="setDeadline">Deadine </label>
-            <input
-              type="date"
-              name="setDeadline"
-              placeholder=" Enter Deadline"
-              id="setDeadline"
-              onChange={dateFunc}
-            />
-          </>
-        ) : (
-          ""
-        )}
 
-        <label>Want Resume/CV ?</label>
-        <label htmlFor="wantApply">
-          Yes
-          <input
-            type="radio"
-            name="wantApply"
-            id="wantApply"
-            value="yes"
-            placeholder=""
-            onChange={(event) => setWantApply(event.target.value)}
-          />
-        </label>
-        <label htmlFor="wantApply">
-          No
-          <input
-            type="radio"
-            name="wantApply"
-            id="wantApply"
-            placeholder=""
-            value="no"
-            onChange={(event) => setWantApply(event.target.value)}
-          />
-        </label>
-        {wantApply === "yes" ? (
-          <>
-            <button>Apply</button>
-          </>
-        ) : (
-          ""
-        )}
-      </form>
-      <button onClick={postJob}>Post</button>
-      <button onClick={navPageBackword}>Back</button>
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-semibold">
+              Is There An Application Deadline?
+            </label>
+            <div className="mt-2">
+              <label className="inline-flex items-center">
+                <input
+                  type="radio"
+                  name="deadlineValue"
+                  value="yes"
+                  className="form-radio h-4 w-4 text-blue-500"
+                  onChange={(event) => setDeadlineValue(event.target.value)}
+                />
+                <span className="ml-2">Yes</span>
+              </label>
+              <label className="inline-flex items-center ml-6">
+                <input
+                  type="radio"
+                  name="deadlineValue"
+                  value="no"
+                  className="form-radio h-4 w-4 text-blue-500"
+                  onChange={(event) => setDeadlineValue(event.target.value)}
+                />
+                <span className="ml-2">No</span>
+              </label>
+            </div>
+          </div>
+
+          {deadlineValue === "yes" && (
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-semibold">
+                Deadline
+              </label>
+              <input
+                type="date"
+                name="setDeadline"
+                className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:shadow-outline-blue"
+                onChange={dateFunc}
+              />
+            </div>
+          )}
+
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-semibold">
+              Want Resume/CV?
+            </label>
+            <div className="mt-2">
+              <label className="inline-flex items-center">
+                <input
+                  type="radio"
+                  name="wantApply"
+                  value="yes"
+                  className="form-radio h-4 w-4 text-blue-500"
+                  onChange={(event) => setWantApply(event.target.value)}
+                />
+                <span className="ml-2">Yes</span>
+              </label>
+              <label className="inline-flex items-center ml-6">
+                <input
+                  type="radio"
+                  name="wantApply"
+                  value="no"
+                  className="form-radio h-4 w-4 text-blue-500"
+                  onChange={(event) => setWantApply(event.target.value)}
+                />
+                <span className="ml-2">No</span>
+              </label>
+            </div>
+          </div>
+
+         
+        </form>
+
+        <div className="flex justify-between mt-4">
+          <button
+            onClick={navPageBackward}
+            className="bg-gray-500 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline-gray"
+          >
+            Back
+          </button>
+          <button
+            onClick={postJob}
+            className="bg-blue-500 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue"
+          >
+            Post
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
